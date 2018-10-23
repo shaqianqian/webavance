@@ -685,13 +685,9 @@ for (var i = 0; i < lesSoutenances.length; i++) {
 
     var div_footer = document.createElement("div");
     div_footer.className = "panel-footer";
-    // var salle=null;
-    // for(var s=0;s<Salles.length;s++){
-    //     if(lesSoutenances[i].specialite)
-    //
-    // }
 
-    div_footer.appendChild(document.createTextNode(lesSoutenances[i].jour + "/" + lesSoutenances[i].specialite));
+    div_footer.appendChild(document.createTextNode(lesSoutenances[i].jour + "/" + lesSoutenances[i].specialite+"/"+Salles[lesSoutenances[i].specialite]["04"]));
+
     div_panel.appendChild(div_footer);
     for (var j = 0; j < 4; j++) {
 
@@ -702,6 +698,7 @@ for (var i = 0; i < lesSoutenances.length; i++) {
     }
 
 }
+
 var element = document.getElementById("Planning");
 for (var j = 0; j < 4; j++) {
 
