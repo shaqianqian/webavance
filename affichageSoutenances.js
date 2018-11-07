@@ -1,8 +1,11 @@
-function construitColonnesJours(largeur) {
+
+
+Plan.prototype.construitColonnesJours=function () {
+
     var Cols = [];
     for (var i = 0; i < Jours.length; i++) {
         var div_col = document.createElement("div");
-        div_col.className = "col-sm-" + largeur;
+        div_col.className = "col-sm-" + this.largeur;
         div_col.setAttribute("id", Jours[i]);
         var c = new Col(div_col, Jours[i]);
         Cols.push(c);
@@ -10,9 +13,9 @@ function construitColonnesJours(largeur) {
     }
     return Cols;
 
-}
+};
 
-function construitPanel() {
+Plan.prototype.construitPanel=function() {
     var creneaus = [];
     for (var i = 0; i < lesSoutenances.length; i++) {
         var creneau = new Creneau(lesSoutenances[i].debut, lesSoutenances[i].etudiant, lesSoutenances[i].societe, lesSoutenances[i].tuteur,
@@ -20,14 +23,14 @@ function construitPanel() {
         creneaus.push(creneau);
     }
     return creneaus;
-}
+};
 
 function Plan(balise, jours, largeur) {
     this.balise = balise;
     this.jours = jours;
     this.largeur = largeur;
-    this.cols = construitColonnesJours(largeur);
-    this.creneaus = construitPanel();
+    this.cols =this.construitColonnesJours();
+    this.creneaus = this.construitPanel();
 
 }
 
