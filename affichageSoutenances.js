@@ -24,7 +24,7 @@ Plan.prototype.construitPanel=function() {
     }
     return creneaus;
 };
-
+console.log("coucou");
 function Plan(balise, jours, largeur) {
     this.balise = balise;
     this.jours = jours;
